@@ -1,0 +1,19 @@
+<% if !@tour_dates.blank? %>
+	<table border="0">
+		<tr>
+			<th>Date</th>
+			<th>City, State (Country)</th>
+		</tr>
+	</table>
+  <% for tour_date in @tour_dates %>
+		<div id="tour_dates">
+			<tr>
+	  		<td><%= tour_date.date %></td>
+				<td><%= tour_date.city_state_country %></td>
+	  	</tr>
+		</div>
+  <% end %>
+	<%= link_to "Add new Tour Date", :action => "new" %>
+<% else %>
+  	Looks like you need to add some tour dates!  Click <%= link_to "here", :action => "new" %>
+<% end %>

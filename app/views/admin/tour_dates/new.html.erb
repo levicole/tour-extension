@@ -1,0 +1,19 @@
+<% form_for [:admin, @tour_date] do |f| %>
+	<p>
+		<label for="date">Show Date:</label><br />
+		<%= f.date_select :date %>
+	</p>
+	<p>
+		<label for="city">City</label><br />
+		<%= f.text_field :city %>
+	</p>
+	<p>
+		<label for="state">State</label><br />
+		<%= f.text_field :state %>
+	</p>
+	<p>
+		<label for="country">Country</label><br />
+		<%= f.text_field :country %>
+	</p>
+	<%= submit_tag "Save" %>
+<% end %>
