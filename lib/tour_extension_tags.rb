@@ -7,7 +7,7 @@ module TourExtensionTags
   
   tag 'tour_dates:each' do |tag|
     results = []
-    TourDate.all(:order => "date asc").each do |tour_date|
+    TourDate.find(:all, :order => "date asc").each do |tour_date|
       tag.locals.tour_date = tour_date
       results << tag.expand
     end
