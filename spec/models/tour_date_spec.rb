@@ -25,5 +25,5 @@ describe TourDate do
       @tour_date.city_state_country.should == "Nashville, TN (US)"
     end
   end
-  
+ 
 end
