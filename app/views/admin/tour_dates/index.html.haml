@@ -1,17 +1,17 @@
 - unless @tour_dates.blank?
-	%table.index
-		%thead
-			%tr
-				%th Date
-				%th City, State (Country)
-				%th Modify
-		%tbody
-			- @tour_dates.each do |tour_date|
-				%tr
-					%td= tour_date.date
-					%td= tour_date.city_state_country
-					%td= link_to image('remove', :alt => 'Remove link'), remove_admin_tour_date_url(:id => tour_date.id)
-	= link_to "Add new Tour Date, :action => "new"
+  %table.index
+    %thead
+      %tr
+        %th Date
+        %th City, State (Country)
+        %th Modify
+    %tbody
+      - @tour_dates.each do |tour_date|
+        %tr
+          %td= tour_date.date
+          %td= tour_date.city_state_country
+          %td= link_to image('remove', :alt => 'Remove link'), remove_admin_tour_date_url(:id => tour_date.id)
+  = link_to "Add new Tour Date", :action => "new"
 - else
-	== Looks like you need to add some tour dates! Click #{link_to "here", :action => "new"}
+  == Looks like you need to add some tour dates! Click #{link_to "here", :action => "new"}
 
