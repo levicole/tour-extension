@@ -1,15 +1,9 @@
-- form_for [:admin, @tour_date] do |f|
-  %p
-    %label{:for => "date"} Show Date: 
-    = f.date_select :date
-  %p
-    %label{:for => "City"} City:
-    = f.text_field :city
-  %p
-    %label{:for => "state"} State:
-    = f.text_field :state
-  %p
-    %label{:for => "country"} Country
-    = f.text_field
-  = submit_tag "Save"
-- end
+- include_stylesheet "admin/tour_dates"
+%h1 New Tour Date
+.form-area
+  .tour-date-form
+    - form_for [:admin, @tour_date] do |f|
+      = render :partial => "form_fields", :locals => { :f => f }
+      %p
+        = submit_tag "Save"
+  .clearer{:style => "clear:both"} &nbsp;
