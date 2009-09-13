@@ -1,0 +1,15 @@
+- form_for [:admin, @tour_date] do |f|
+  %p
+    %label{:for => "date"} Show Date: 
+    = f.date_select :date
+  %p
+    %label{:for => "City"} City:
+    = f.text_field :city
+  %p
+    %label{:for => "state"} State:
+    = f.text_field :state
+  %p
+    %label{:for => "country"} Country
+    = f.text_field
+  = submit_tag "Save"
+- end
