@@ -17,6 +17,8 @@ if File.directory?(File.dirname(__FILE__) + "/matchers")
   Dir[File.dirname(__FILE__) + "/matchers/*.rb"].each {|file| require file }
 end
 
+require File.dirname(__FILE__) + "/factories.rb"
+
 Spec::Runner.configure do |config|
   # config.use_transactional_fixtures = true
   # config.use_instantiated_fixtures  = false
@@ -49,7 +51,7 @@ end
 def it_should_validate_presence_of(*attrs)
   for attribute in attrs
     it "requires the attribute: #{attribute.to_s}" do
-      @tour_date = TourDate.new(required_attributes.without(attribute))
+      @tour_date = Factory.build(:tour_date, {attribute => ''})
       @tour_date.should have(1).errors_on(attribute)
     end
   end

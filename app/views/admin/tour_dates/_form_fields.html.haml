@@ -2,6 +2,9 @@
   %label{:for => "date"} Show Date:
   = f.date_select :date
 %p
+  %label{:for => "venue"} Venue:
+  = f.text_field :venue, :class => "text"
+%p
   %label{:for => "City"} City:
   = f.text_field :city, :class => "text"
 %p
@@ -10,3 +13,6 @@
 %p
   %label{:for => "country"} Country
   = f.text_field :country, :class => "text"
+%p
+  %label{:for => "description"} Description:
+  = f.text_area :description, :class => "text"

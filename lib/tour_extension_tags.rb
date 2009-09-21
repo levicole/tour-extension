@@ -39,4 +39,14 @@ module TourExtensionTags
     "#{tour_date.country}"
   end
   
+  tag 'tour_dates:each:description' do |tag|
+    tour_date = tag.locals.tour_date
+    "#{tour_date.description}"
+  end
+  
+  tag 'tour_dates:each:tickets_link' do |tag|
+    tour_date = tag.locals.tour_date
+    "#{tour_date.tickets_link}"
+  end
+  
 end
