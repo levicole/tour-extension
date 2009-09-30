@@ -15,8 +15,9 @@
           %td= tour_date.city_state_country
           %td= tour_date.venue
           %td= tour_date.description
-          %td= link_to image('remove', :alt => 'Remove link'), [:admin, tour_date], :method => :delete, :confirm => "Are you sure you want to do that?"
+          %td
+            = link_to "Edit", edit_admin_tour_date_path(tour_date)
+            = link_to image('remove', :alt => 'Remove link'), [:admin, tour_date], :method => :delete, :confirm => "Are you sure you want to do that?"
   = link_to "Add new Tour Date", :action => "new"
 - else
   == Looks like you need to add some tour dates! Click #{link_to "here", :action => "new"}
-
