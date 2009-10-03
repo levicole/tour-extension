@@ -1,0 +1,9 @@
+- include_stylesheet "admin/tour_dates"
+%h1 Edit Tour Date
+.form-area
+  .tour-date-form
+    - form_for [:admin, @tour_date] do |f|
+      = render :partial => "form_fields", :locals => { :f => f }
+      %p
+        = submit_tag "Save"
+  .clearer{:style => "clear:both"} &nbsp;

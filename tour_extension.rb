@@ -13,7 +13,7 @@ class TourExtension < Radiant::Extension
   end
   
   def activate
-    admin.tabs.add "Tour", "/admin/tour_dates", :after => "Pages", :visibility => [:all]
+    admin.tabs.add "Tour", "/admin/tour_dates", :after => "News", :visibility => [:all]
     Page.send :include, TourExtensionTags
   end
   
