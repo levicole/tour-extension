@@ -39,7 +39,6 @@ module TourExtensionTags
     "#{tour_date.country}"
   end
   
-<<<<<<< HEAD:lib/tour_extension_tags.rb
 	tag 'tour_dates:each:venue' do |tag|
 		tour_date = tag.locals.tour_date
 		"#{tour_date.venue}"
@@ -50,12 +49,6 @@ module TourExtensionTags
 		"#{tour_date.date.strftime("%B %d, %Y")}"
 	end
 
-	tag 'tour_dates:each:tickets_link' do |tag|
-		tour_date = tags.locals.tour_date
-		"#{tour_date.tickets_link}"
-	end
-end
-=======
   tag 'tour_dates:each:description' do |tag|
     tour_date = tag.locals.tour_date
     "#{tour_date.description}"
@@ -67,4 +60,3 @@ end
   end
   
 end
->>>>>>> 1b6ee5c664ed99489fe8608d77fdf81ccb83c408:lib/tour_extension_tags.rb
