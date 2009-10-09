@@ -46,7 +46,11 @@ module TourExtensionTags
 
 	tag 'tour_dates:each:date' do |tag|
 		tour_date = tag.locals.tour_date
-		"#{tour_date.date.strftime("%B %d, %Y")}"
+		if attr["format"]
+			"#{tour_date.date.strftime(attr["format"]}"
+		else
+			"#{tour_date.date.strftime("%B %d, %Y")}"
+		end
 	end
 
   tag 'tour_dates:each:description' do |tag|

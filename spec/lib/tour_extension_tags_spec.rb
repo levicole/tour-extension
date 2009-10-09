@@ -49,6 +49,11 @@ describe "TourExtensionTags" do
       pages(:home).should render(tag).as(expected)
     end
     
+		it "should render date with a format" do
+			tag = do_nested_tag("<r:date format='%m/%d/%Y'/>"
+			expected = "#{@tour_dates.first.date.strftime('%m/%d/%Y')}"
+			pages(:home).should render(tag).as(expected)
+		end
   end
 
 end
