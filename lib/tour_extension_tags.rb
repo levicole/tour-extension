@@ -7,11 +7,11 @@ module TourExtensionTags
   
   tag 'tour_dates:each' do |tag|
     results = []
-    TourDate.find(:all, :order => "date asc").each do |tour_date|
+    TourDate.find(:all, :conditions => ["date > ?", Date.today], :order => "date asc").each do |tour_date|
       tag.locals.tour_date = tour_date
       results << tag.expand
     end
-    results
+    results.blank? ? "<div class='no-dates'>No Current Tour Dates</div>" : results
   end
   
   tag 'tour_dates:each:city_state_country' do |tag|
